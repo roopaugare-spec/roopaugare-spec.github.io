@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My GitHub.io Test Site</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(-45deg, #ff6b6b, #6c5ce7, #00cec9, #fdcb6e);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: white;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 50px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: float 4s ease-in-out infinite;
+      max-width: 700px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    button {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: #6c5ce7;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #ffeaa7;
+    }
+
+    .cards {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 18px;
+      min-width: 120px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🚀 Hello GitHub Pages!</h1>
+    <p>Your colorful test site is live.</p>
+
+    <button onclick="changeMessage()">Click Me</button>
+
+    <div class="cards">
+      <div class="card">🌈 Colorful</div>
+      <div class="card">⚡ Fast</div>
+      <div class="card">✨ Animated</div>
+    </div>
+
+    <p id="message" style="margin-top:25px;"></p>
+  </div>
+
+  <script>
+    function changeMessage() {
+      const messages = [
+        "🎉 It works!",
+        "🔥 Your GitHub.io site is live!",
+        "✨ Deployment successful!",
+        "🚀 Ready to build something awesome!"
+      ];
+
+      const random = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("message").textContent = random;
+    }
+  </script>
+
+</body>
+</html>
